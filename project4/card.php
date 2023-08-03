@@ -15,7 +15,8 @@ session_start();
          crossorigin = "anonymous">
          <script src="https://kit.fontawesome.com/98ec1cd8ac.js" crossorigin="anonymous"></script>
        <link rel = "stylesheet" href="home.css">
-         <title>Bootstrap 4 Example</title>
+        
+       <title>Bootstrap 4 Example</title>
    </head>
    <style>
        
@@ -112,72 +113,39 @@ session_start();
 
       
 
-
-<footer class="page-footer font-small  pt-4" style="background-color:#F8513E">
-
-
-<div class="container-fluid text-center text-md-left">
-
-
-  <div class="row">
-
-
-    <div class="col-md-6 mt-md-0 mt-3">
-
-
-    <h5 class="text-uppercase"><img src="t.png" style="margin-left:60px ;width:140px;"></h5>
-    
+<footer class="page-footer font-small pt-4" style="background-color:#F8513E">
+  <div class="container-fluid text-center text-md-left">
+    <div class="row">
+      <div class="col-md-4 mt-md-0 mt-3">
+        <h5 class="text-uppercase"><img src="t.png" style="width: 140px;"></h5>
+      </div>
+      <div class="col-md-2 mb-md-0 mb-3" style="margin-left: 20px;">
+        <h5 class="text-uppercase" style="color:white;">Location</h5>
+        <ul class="list-unstyled">
+          <li><span style="color:white;">Irbid</span></li>
+          <li><span style="color:white;">Behind Abdel Rahman Ibn Auf Mosque</span></li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-md-0 mb-3" style="margin-left: 20px;">
+        <h5 class="text-uppercase" style="color:white;">Hours</h5>
+        <ul class="list-unstyled" style="color:white;">
+          <li><span>Mon - Fri: 9:00 AM - 6:00 PM</span></li>
+          <li><span>Sat: 10:00 AM - 4:00 PM</span></li>
+          <li><span>Sun: Closed</span></li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-md-0 mb-3" style="margin-left: 20px;">
+        <h5 class="text-uppercase" style="color:white;">Contact Us</h5>
+        <ul class="list-unstyled">
+          <li><a style="color:white; text-decoration:none;" href="mailto:anfaldherat@gmail.com">anfaldherat@gmail.com</a></li>
+          <li><a style="color:white; text-decoration:none;" href="tel:07777777">07777777</a></li>
+        </ul>
+      </div>
+      
     </div>
- 
-
-    <hr class="clearfix w-100 d-md-none pb-3">
-
- 
-    <div class="col-md-3 mb-md-0 mb-3">
-
-  
-      <h5 class="text-uppercase"  style="color:white">Quick Links</h5>
-
-      <ul class="list-unstyled" style="color:white">
-        
-        <li>
-          <a href="#!" style="color:white">about as</a>
-        </li>
-        <li>
-          <a href="#!" style="color:white">contact</a>
-        </li>
-        
-      </ul>
-
-    </div>
-
-    <div class="col-md-3 mb-md-0 mb-3">
-
-      <h5 class="text-uppercase"  style="color:white">Contact Us</h5>
-
-      <ul class="list-unstyled">
-        
-        <li>
-          <a href="#!"  style="color:white">anfaldherat@gmail.com</a>
-        </li>
-        <li>
-          <a href="#!"  style="color:white">07777777</a>
-        </li>
-       
-      </ul>
-
-    </div>
-
   </div>
-
-</div>
-
-  </div>
-
-</div>
-
-
 </footer>
+
 
 
 
