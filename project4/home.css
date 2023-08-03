@@ -1,0 +1,203 @@
+
+
+.container {
+  
+    padding: 50px 0;
+}
+
+
+.adminform {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px #F8513E;
+}
+
+.adminform h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #F8513E;
+}
+
+.adminform .box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #F8513E;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+.adminform .btn {
+    background-color: #F8513E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.adminform .btn:hover {
+    background-color: #d64230;
+}
+.adminform:active {
+    box-shadow: 0 0 15px #F8513E;
+}
+
+
+.adminform .box:active {
+    border-color: #F8513E;
+}
+/* .massg{
+
+	background: var(--bg-color);
+	padding: 1.5rem 1rem;
+	font-size: 2rem;
+	color: var(--black);
+	
+} */
+
+.productdisplay table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    margin-top: 20px; /* Add margin on top */
+}
+
+.productdisplay th {
+    background-color: #FF795B;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+}
+
+.productdisplay tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.productdisplay td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.productdisplay tr:hover {
+    background-color: #FF795B;
+}
+
+/* Additional Styling */
+.productdisplay {
+    margin: 0 auto; /* Center the table horizontally */
+    max-width: 800px; /* Limit the width of the table */
+    border-radius: 5px; /* Rounded corners for the table */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Style for the message block */
+.message-block {
+    display: none;
+    margin-top: 10px; /* Add margin on top */
+    color: #FF795B; /* Message text color */
+    font-size: 16px; /* Message font size */
+    font-weight: bold;
+}
+
+.message-block.active {
+    display: block;
+}
+
+.product-image {
+    max-width: 100px; /* Adjust the max width of the image */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image horizontally within the cell */
+}
+
+
+.clear-session {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.productdisplay {
+    margin-bottom: 20px;
+}
+.detail{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	margin-bottom: 20px;
+}
+.image-container p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+.image-container:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-container img {
+    transform: scale(1);
+    transition: transform 0.5s;
+	margin-top: 80px;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+
+.gallery {
+    
+    text-align: center;
+	margin-bottom: 50px;
+	
+	
+}
+
+
+.gallery h2 {
+    font-size: 28px;
+    color: #FFFFFF; 
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #FF795B; 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); 
+	margin-top: 70px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+	max-width: 1480px;
+	margin-left: 10px;
+	
+
+	
+}
+
+.gallery-image img {
+    width:100%;
+    height: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+	
+	
+}
+
+.gallery-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
