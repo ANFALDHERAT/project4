@@ -100,6 +100,7 @@ session_start();
                 echo '<p>Price: ' . $product['product_price'] . '</p>';
                 echo '<p>' . $product['product_Date'] . '</p>';
                 echo '<p>' . $product['product_desc'] . '</p>';
+                echo '<p>' . ($product['product_active'] ? 'Active' : 'inactive') . '</p>';
                 echo '</div>';
                 echo '</div>';
             }

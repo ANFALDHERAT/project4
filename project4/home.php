@@ -6,16 +6,17 @@ if(isset($_POST['add-product'])) {
     $productprice = $_POST['product-price'];
     $productdesc = $_POST['product-desc'];
     $date = $_POST['Date'];
+    $isActive = isset($_POST['product-active']) ? 1 : 0;
     if(empty($productname) || empty($productprice) || empty($productdesc)|| empty( $date )) {
         $message = 'Please fill out all fields';
     } else {
         if(isset($_FILES['product-image']) && $_FILES['product-image']['error'] === UPLOAD_ERR_OK) {
-            // Handle image upload
+         
             $productimage = $_FILES['product-image'];
             $imagePath = 'upload/' . $productimage['name'];
             move_uploaded_file($productimage['tmp_name'], $imagePath);
         } else {
-            // No image uploaded or an error occurred
+           
             $imagePath = '';
         }
         $_SESSION['products'][] = array(
@@ -23,7 +24,8 @@ if(isset($_POST['add-product'])) {
             'product_price' => $productprice,
             'product_desc' => $productdesc,
             'product_image' => $imagePath,
-            'product_Date' =>  $date 
+            'product_Date' =>  $date ,
+            'product_active' => $isActive
         );
         $message = 'Product added successfully';
     }
@@ -88,7 +90,8 @@ if(isset($_GET['clear']) && $_GET['clear'] === 'true') {
 							
   </ul>
 </nav>
-   
+
+
 <div class="image-container" id="i" >
     <img src="1.jpg" class="img-fluid" alt="Image Description" style="margin-top:100px">  
     <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;font-size:25px">
@@ -97,7 +100,6 @@ if(isset($_GET['clear']) && $_GET['clear'] === 'true') {
 </div>
 
 </div>
-
 
 
 <div class="container">
@@ -130,7 +132,16 @@ if(isset($_GET['clear']) && $_GET['clear'] === 'true') {
        <label for="Date">Select Date:</label>
     <input type="date" id="Date" name="Date"  class="box">
        <input type="text"  placeholder="enter discription of product"  name="product-desc" class="box"> 
-       
+
+                    <input type="checkbox" name="product-active" >
+                    <label for="product-active"  style="    border: 2px solid #F8513E; 
+               background-color: wight; 
+             color: #F8513E; 
+              padding: 5px;
+             border-radius: 5px;
+            font-weight: bold;">Active</label><br>
+               
+
        <input type="submit" class="btn" name="add-product" value="add product">
         </form>
     </div>
@@ -151,7 +162,8 @@ if(isset($_GET['clear']) && $_GET['clear'] === 'true') {
         <td>product name</td>
         <td>product price</td>
         <td>product discription</td>
-        <td>Product date</td>    
+        <td>Product date</td>   
+        <td>is Active</td> 
         
     </tr>
 </thead>
@@ -165,6 +177,7 @@ if(isset($_GET['clear']) && $_GET['clear'] === 'true') {
                     echo '<td>' . $product['product_price'] . '</td>';
                     echo '<td>' . $product['product_desc'] . '</td>';
                     echo '<td>' . $product['product_Date'] . '</td>';
+                    echo '<td>' . ($product['product_active'] ? 'is active' : 'inactive') . '</td>';
                     echo '</tr>';
                     // unset($_SESSION['products']);
                 }
