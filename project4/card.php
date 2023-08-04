@@ -55,30 +55,36 @@ session_start();
         }
     </style>
    <body>
-      <div class = "container-fluid" style="background-color:#F8513E">
        
-         <nav class = "navbar navbar-expand-sm fixed-top" style="background-color:#F8513E">
-            <a class = "navbar-brand" href = "#">
-               <img src = "t.png" style = "width:120px;" alt = "">
+   <div class = "container-fluid" style="width:100%; hight:100vh">
+<nav class="navbar navbar-expand-sm fixed-top ">
+<a class = "navbar-brand " href = "#">
+               <img src = "t.png" style = "width:140px;" alt = "">
             </a>
-            <ul class = "navbar-nav ml-auto" >
-               <li class = "nav-item active mx-4">
-                  <a class = "nav-link" href = "#i" style="color:white;font-size:30px">Home 
-                     <span class = "sr-only">(current)</span>
-                  </a>
-               </li>
-               <li class = "nav-item mx-4">
-                  <a class = "nav-link" href = "#" style="color:white ;font-size:30px">About Us</a>
-               </li>
-               <li class = "nav-item mx-4">
-                  <a class = "nav-link" href = "#" style="color:white ;font-size:30px">Contact</a>
-               </li>
-            </ul>
-            
-         </nav>
-        
-      </div>
+<ul class="navbar-nav">
+  
  
+    <li class="nav-item">
+      <a class="nav-link mx-4" href="#">HOME</a></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link mx-4" href="#">About</a>
+    </li>
+    
+    <li class="nav-item dropdown"  >
+		<a class="nav-link " data-toggle="dropdown" href="#">Services</a>
+                <ul class="dropdown-menu">
+                    
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+              
+              </ul>
+							
+  </ul>
+</nav>
+   
+    
 
 
 <div class="container">
@@ -92,6 +98,7 @@ session_start();
                 echo '<div class="card-content">';
                 echo '<h3>' . $product['product_name'] . '</h3>';
                 echo '<p>Price: ' . $product['product_price'] . '</p>';
+                echo '<p>' . $product['product_Date'] . '</p>';
                 echo '<p>' . $product['product_desc'] . '</p>';
                 echo '</div>';
                 echo '</div>';

@@ -5,8 +5,8 @@ if(isset($_POST['add-product'])) {
     $productname = $_POST['product-name'];
     $productprice = $_POST['product-price'];
     $productdesc = $_POST['product-desc'];
-
-    if(empty($productname) || empty($productprice) || empty($productdesc)) {
+    $date = $_POST['Date'];
+    if(empty($productname) || empty($productprice) || empty($productdesc)|| empty( $date )) {
         $message = 'Please fill out all fields';
     } else {
         if(isset($_FILES['product-image']) && $_FILES['product-image']['error'] === UPLOAD_ERR_OK) {
@@ -22,7 +22,8 @@ if(isset($_POST['add-product'])) {
             'product_name' => $productname,
             'product_price' => $productprice,
             'product_desc' => $productdesc,
-            'product_image' => $imagePath
+            'product_image' => $imagePath,
+            'product_Date' =>  $date 
         );
         $message = 'Product added successfully';
     }
@@ -50,42 +51,53 @@ if(isset($_GET['clear']) && $_GET['clear'] === 'true') {
          crossorigin = "anonymous">
          <script src="https://kit.fontawesome.com/98ec1cd8ac.js" crossorigin="anonymous"></script>
        <link rel = "stylesheet" href="home.css">
-         <title>Bootstrap 4 Example</title>
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+       <title>Bootstrap 4 Example</title>
    </head>
    
    <body>
-      <div class = "container-fluid" style="background-color:#F8513E">
-       
-         <nav class = "navbar navbar-expand-sm fixed-top " style="background-color:#F8513E">
-            <a class = "navbar-brand " href = "#">
+   
+   <div class = "container-fluid" style="width:100%; hight:100vh">
+<nav class="navbar navbar-expand-sm fixed-top ">
+<a class = "navbar-brand " href = "#">
                <img src = "t.png" style = "width:140px;" alt = "">
             </a>
-            <ul class = "navbar-nav ml-auto" >
-               <li class = "nav-item active mx-4">
-                  <a class = "nav-link" href = "#i" style="color:white ;font-size:30px">Home 
-                     <span class = "sr-only">(current)</span>
-                  </a>
-               </li>
-               <li class = "nav-item  mx-4">
-                  <a class = "nav-link" href = "#" style="color:white;font-size:30px">About Us</a>
-               </li>
-               <li class = "nav-item mx-4">
-                  <a class = "nav-link" href = "#" style="color:white;font-size:30px">Contact</a>
-               </li>
-            </ul>
-            
-         </nav>
-        
-      </div>
-     
+<ul class="navbar-nav">
+  
+ 
+    <li class="nav-item">
+      <a class="nav-link mx-4" href="#">HOME</a></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link mx-4" href="#">About</a>
+    </li>
     
+    <li class="nav-item dropdown"  >
+		<a class="nav-link " data-toggle="dropdown" href="#">Services</a>
+                <ul class="dropdown-menu">
+                    
+                <li><a href="#"></a>Service1</li>
+                <li><a href="#"></a>Service2</li>
+                <li><a href="#"></a>Service3</li>
+              
+              </ul>
+							
+  </ul>
+</nav>
    
- <div class="image-container" id="i" style="position: relative;">
-    <img src="1.jpg" class="img-fluid" alt="Image Description"> 
+<div class="image-container" id="i" >
+    <img src="1.jpg" class="img-fluid" alt="Image Description" style="margin-top:100px">  
     <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;font-size:25px">
     Welcome to The Grill House, where sizzling flavors and savory aromas await you.
     </p>
 </div>
+
+</div>
+
 
 
 <div class="container">
@@ -115,6 +127,8 @@ if(isset($_GET['clear']) && $_GET['clear'] === 'true') {
        <input type="text" placeholder="enter product name" name="product-name" class="box">
        <input type="number" placeholder="enter product price" name="product-price" class="box">
        <!-- <label for="product-date">Select Date:</label>-->
+       <label for="Date">Select Date:</label>
+    <input type="date" id="Date" name="Date"  class="box">
        <input type="text"  placeholder="enter discription of product"  name="product-desc" class="box"> 
        
        <input type="submit" class="btn" name="add-product" value="add product">
@@ -137,6 +151,7 @@ if(isset($_GET['clear']) && $_GET['clear'] === 'true') {
         <td>product name</td>
         <td>product price</td>
         <td>product discription</td>
+        <td>Product date</td>    
         
     </tr>
 </thead>
@@ -149,6 +164,7 @@ if(isset($_GET['clear']) && $_GET['clear'] === 'true') {
                     echo '<td>' . $product['product_name'] . '</td>';
                     echo '<td>' . $product['product_price'] . '</td>';
                     echo '<td>' . $product['product_desc'] . '</td>';
+                    echo '<td>' . $product['product_Date'] . '</td>';
                     echo '</tr>';
                     // unset($_SESSION['products']);
                 }
